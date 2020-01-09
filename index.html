@@ -42,7 +42,7 @@
 		<![endif]-->
 
 		<script type="text/javascript" src="assets/js/libs/modernizr.min.js"></script>
-		<script src='../www.google.com/recaptcha/api.js'></script>
+
 
         <style>
         .flex{
@@ -179,17 +179,17 @@
 							<a href="#home" class="scrollto">Home</a>
 						</li>
 						<li>
-							<a href="#about" class="scrollto">About</a>
+							<a href="#about" id="aboutto" class="scrollto">About</a>
 						</li>
 						<li>
-							<a href="#services" class="scrollto">Skills</a>
+							<a href="#services" id="servicesto" class="scrollto">Skills</a>
 						</li>
 						<li>
-							<a href="#portfolio" class="scrollto">Portfolio</a>
+							<a href="#portfolio" id="portfolioto" class="scrollto">Portfolio</a>
 						</li>
 
 						<li>
-							<a href="#contact" class="scrollto">Contact</a>
+							<a href="#contact" id="contactto" class="scrollto">Contact</a>
 						</li>
 					</ul>
 				</div><!--End navbar-collapse -->
@@ -981,7 +981,41 @@
 			</div>
 
 		</section>
+		<style>
+				#next{
+					position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #EA8825;
+    border-radius: 50%;
+    font-size: smaller;
+		width: 50px;
+		height: 50px;
+		text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+		color: white;
+    box-shadow: 2px 2px 2px grey;
+		z-index: 999999999999;
+				}
 
+				#next:hover{
+					position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #EA8825;
+    border-radius: 50%;
+    font-size: smaller;
+		width: 55px;
+		height: 55px;
+		text-align: center;
+    padding-top: 18px;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px grey;
+		z-index: 999999999999;
+				}
+		</style>
+<div id="next">Next</div>
 		<!-- ==============================================
 		FOOTER
 		=============================================== -->
@@ -1007,24 +1041,41 @@
 		<!-- ==============================================
 		SCRIPTS
 		=============================================== -->
+		<script>
+		document.getElementById("next").addEventListener("click", nextsection);
+
+
+		var current=0;
+
+		function nextsection(){
+
+
+			if(current==0){
+				document.getElementById("servicesto").click();
+				current=1;
+			}
+			else if (current==1) {
+				document.getElementById("portfolioto").click();
+				current=2;
+			}
+			else if (current==2) {
+				document.getElementById("contactto").click();
+				current=3;
+			}
+			else {
+				document.getElementById("aboutto").click();
+				current=0;
+
+			}
+		}
+
+		</script>
 		<script src="../ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 		<script>
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 		</script>
 		<script type="text/javascript">
-    var _mfq = _mfq || [];
-    (function() {
-        var mf = document.createElement("script");
-        mf.type = "text/javascript"; mf.async = true;
-        mf.src = "../cdn.mouseflow.com/projects/b6280644-983b-4d09-b194-cbedc4a3cd81.js";
-        document.getElementsByTagName("head")[0].appendChild(mf);
-    })();
-
-
-
-
-
 
 		var newsItem = [
 		  {
@@ -1054,8 +1105,11 @@
 		<script src="assets/js/waypoints.min.js"></script>
 		<script src="assets/js/waypoints-sticky.min.js"></script>
 		<script src="assets/js/jquery.countTo.js"></script>
-		<script src="assets/js/contact.js"></script>
+
 		<script src="assets/js/quattro.js"></script>
+
+
+
 
 	</body>
 
