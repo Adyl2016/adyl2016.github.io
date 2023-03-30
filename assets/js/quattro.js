@@ -5,7 +5,7 @@ $(document).ready(function() {
 	==============================================*/
 	
 	$(window).load(function(){
-		$('#page-loader').fadeOut(500);
+		$('#page-loader').fadeOut(200);
 	});	
 	
 	/*============================================
